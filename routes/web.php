@@ -19,8 +19,12 @@ use Inertia\Inertia;
     return Inertia::render('Home');
 });  */
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductoController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/productos', function () {
+    return Inertia::render('Productos/Index');
+});
 
  
 Route::middleware([

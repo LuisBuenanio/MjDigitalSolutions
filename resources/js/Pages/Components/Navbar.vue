@@ -2,14 +2,17 @@
   <header
     :class="[
       'fixed top-0 left-0 w-full z-50 transition-all duration-300',
-      isScrolled ? 'bg-white shadow-md' : 'bg-transparent'
+      isScrolled ? 'bg-blue-400 shadow-md' : 'bg-blue-100'
     ]"
   >
-    <nav class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+    <nav class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between"
+          x-data="{ scrolled: false }"
+          x-init="window.addEventListener('scroll', () => { scrolled = window.scrollY > 50 })"
+          :class="scrolled ? 'bg-red-800 shadow-md' : 'bg-transparent'">
       <!-- Logo -->
       <a href="/" class="flex items-center gap-2">
         <img src="/img/logo/logomj.png" alt="Logo" class="h-10" />
-        <span class="text-xl font-bold text-gray-800">MULTISERVICIOS JHOSUE</span>
+        <span class="text-xl font-bold text-gray-800">MJ DIGITAL SOLUTIONS</span>
       </a>
 
       <!-- Menú grande (escritorio) -->
